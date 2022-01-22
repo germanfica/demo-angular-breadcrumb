@@ -7,6 +7,7 @@ import {BreadcrumbComponent} from './breadcrumb/breadcrumb.component';
 
 // import {BreadcrumbModule} from 'primeng/primeng';
 import {BreadcrumbModule} from 'primeng/breadcrumb';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {BreadcrumbModule} from 'primeng/breadcrumb';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BreadcrumbModule
+    BreadcrumbModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
