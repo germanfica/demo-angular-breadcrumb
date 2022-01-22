@@ -4,7 +4,10 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BreadcrumbComponent} from './breadcrumb/breadcrumb.component';
-import {BreadcrumbModule} from 'primeng/primeng';
+
+// import {BreadcrumbModule} from 'primeng/primeng';
+import {BreadcrumbModule} from 'primeng/breadcrumb';
+
 
 @NgModule({
   declarations: [

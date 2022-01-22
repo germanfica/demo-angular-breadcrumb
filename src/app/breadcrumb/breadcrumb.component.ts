@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {MenuItem} from 'primeng/api';
-import {isNullOrUndefined} from 'util';
 import {ActivatedRoute, NavigationEnd, Router, RouterEvent} from '@angular/router';
 import {filter} from 'rxjs/operators';
 
@@ -12,7 +11,7 @@ import {filter} from 'rxjs/operators';
 export class BreadcrumbComponent implements OnInit {
   static readonly ROUTE_DATA_BREADCRUMB = 'breadcrumb';
   readonly home = {icon: 'pi pi-home', url: 'home'};
-  menuItems: MenuItem[];
+  menuItems: MenuItem[] = {} as MenuItem[];
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
@@ -36,11 +35,13 @@ export class BreadcrumbComponent implements OnInit {
       }
 
       const label = child.snapshot.data[BreadcrumbComponent.ROUTE_DATA_BREADCRUMB];
-      if (!isNullOrUndefined(label)) {
+      if (label) {
         breadcrumbs.push({label, url});
       }
 
       return this.createBreadcrumbs(child, url, breadcrumbs);
     }
+
+    return breadcrumbs;
   }
 }
